@@ -31,9 +31,9 @@ def MainApplication():
         
         exponent = formattedNumbers[0]
         complexNumber = formattedNumbers[1]
-        allRoots = Demoivre(complexNumber, 1/exponent,True)
+        allRoots = Demoivre(complexNumber, 1/exponent)
 
-        primaryRootLabel.config(text=str(allRoots[0]))
+        primaryRootLabel.config(text=str(allRoots[0]).replace("(", "").replace(")", "").replace("j", "i"))
         listbox.delete(0, END)
         for root in allRoots[1:]:
             formattedRoot = str(root).replace("(", "").replace(")", "").replace("j", "i")
@@ -47,18 +47,9 @@ def MainApplication():
     height = 450
     master.geometry(f"{width}x{height}")
 
-    image = Image.open(os.path.dirname(os.path.realpath(__file__)) + "/rootsymbol.png")
-    image = image.resize((125,125))
-    image = ImageTk.PhotoImage(image)
-
-
     equalsButton = Button(master, text="=", font=('Arial 30'), width=2, height=1, command=OnEqualsButtonPressed)
     equalsButton.config(fg='white', bg='black')
     equalsButton.place(x=470, y=80)
-
-
-    image_label = Label(master, image=image)
-    image_label.place(x=40,y=40)
 
     exponentEntry = Entry(master, width=3, font=('Arial 18'))
     exponentEntry.place(x=20,y=40)

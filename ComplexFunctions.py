@@ -1,7 +1,7 @@
 import math
 
 __thresholdValue = 1e-5
-__doubleDecimalPlaces = 5
+__doubleDecimalPlaces = 3
 
 def cbrt(complex : complex) -> complex:
     if (abs(complex.imag) < 1e-5):

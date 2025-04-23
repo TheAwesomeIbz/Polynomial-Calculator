@@ -265,15 +265,5 @@ CONJUGATE SUB-FUNCTIONS:
 
 
 polynomial = Polynomial(1,-1.6,-120,780)
-print(polynomial.Roots)
-
-
-import cmath
-
-
-print(ComplexFunctions.cbrt(327.161j + -231))
-
-
-
 
 
